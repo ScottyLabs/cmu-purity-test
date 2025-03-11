@@ -1,6 +1,7 @@
 {
 	"files.readonlyInclude": {
-		"bun.lock": true
+		"bun.lock": true,
+		"static/tailwind.css": true
 	},
 	"typescript.preferences.importModuleSpecifier": "non-relative",
 	"editor.formatOnSave": true,
