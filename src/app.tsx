@@ -1,3 +1,4 @@
+import { Home } from "@/routes/home";
 import { Hono } from "hono";
 import { serveStatic } from "hono/bun";
 import type { FC } from "hono/jsx";
@@ -27,16 +28,12 @@ const Layout: FC = (props) => {
 	);
 };
 
-const Home: FC = () => {
-	return (
-		<Layout>
-			<p>Hello world</p>
-		</Layout>
-	);
-};
-
 app.get("/", (c) => {
-	return c.html(<Home />);
+	return c.html(
+		<Layout>
+			<Home />
+		</Layout>,
+	);
 });
 
 export default app;

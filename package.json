@@ -1,8 +1,8 @@
 {
 	"name": "cmu-purity-test",
 	"scripts": {
-		"serve": "bun run --hot src/index.tsx",
-		"tailwind": "bunx @tailwindcss/cli -i ./src/index.css -o ./static/tailwind.css",
+		"serve": "bun run --hot src/app.tsx",
+		"tailwind": "bunx @tailwindcss/cli -i ./src/app.css -o ./static/tailwind.css",
 		"dev": "concurrently 'bun run tailwind -- --watch' 'bun run serve'",
 		"check": "biome check --write --unsafe --no-errors-on-unmatched --files-ignore-unknown=true",
 		"prepare": "husky"
