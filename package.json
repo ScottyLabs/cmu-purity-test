@@ -1,12 +1,17 @@
 {
   "name": "cmu-purity-test",
   "scripts": {
-    "dev": "bun run --hot src/index.tsx"
+    "serve": "bun run --hot src/index.tsx",
+    "tailwind": "bunx @tailwindcss/cli -i ./src/index.css -o ./static/tailwind.css",
+    "dev": "concurrently 'bun run tailwind -- --watch' 'bun run serve'"
   },
   "dependencies": {
     "hono": "^4.7.4"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@tailwindcss/cli": "^4.0.13",
+    "@types/bun": "latest",
+    "concurrently": "^9.1.2",
+    "tailwindcss": "^4.0.13"
   }
 }
