@@ -1,17 +1,30 @@
 {
-  "name": "cmu-purity-test",
-  "scripts": {
-    "serve": "bun run --hot src/index.tsx",
-    "tailwind": "bunx @tailwindcss/cli -i ./src/index.css -o ./static/tailwind.css",
-    "dev": "concurrently 'bun run tailwind -- --watch' 'bun run serve'"
-  },
-  "dependencies": {
-    "hono": "^4.7.4"
-  },
-  "devDependencies": {
-    "@tailwindcss/cli": "^4.0.13",
-    "@types/bun": "latest",
-    "concurrently": "^9.1.2",
-    "tailwindcss": "^4.0.13"
-  }
+	"name": "cmu-purity-test",
+	"scripts": {
+		"serve": "bun run --hot src/index.tsx",
+		"tailwind": "bunx @tailwindcss/cli -i ./src/index.css -o ./static/tailwind.css",
+		"dev": "concurrently 'bun run tailwind -- --watch' 'bun run serve'",
+		"check": "biome check --write --unsafe --no-errors-on-unmatched --files-ignore-unknown=true",
+		"prepare": "husky"
+	},
+	"commitlint": {
+		"extends": ["@commitlint/config-conventional"]
+	},
+	"lint-staged": {
+		"*": ["bun run check"]
+	},
+	"dependencies": {
+		"hono": "^4.7.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@commitlint/cli": "^19.8.0",
+		"@commitlint/config-conventional": "^19.8.0",
+		"@tailwindcss/cli": "^4.0.13",
+		"@types/bun": "latest",
+		"concurrently": "^9.1.2",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.4.3",
+		"tailwindcss": "^4.0.13"
+	}
 }
