@@ -1,5 +1,8 @@
 # deps
 node_modules/
 
+# build
+out/
+
 # tailwind
 tailwind.css

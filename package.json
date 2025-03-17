@@ -4,6 +4,10 @@
 		"serve": "bun run --hot src/app.tsx",
 		"tailwind": "bunx @tailwindcss/cli -i ./src/app.css -o ./static/tailwind.css",
 		"dev": "concurrently 'bun run tailwind -- --watch' 'bun run serve'",
+		"build:css": "bun run tailwind -- --minify",
+		"build:app": "bun build --minify --splitting --outdir=out src/app.tsx",
+		"build": "bun run build:css && bun run build:app",
+		"start": "bun run out/app.js",
 		"check": "biome check --write --unsafe --no-errors-on-unmatched --files-ignore-unknown=true",
 		"prepare": "husky"
 	},

@@ -1,9 +1,9 @@
 [phases.setup]
-nixPkgs = ["bun", "gcc", "libstdc++"]
+nixPkgs = ["bun"]
 cmds = ["bun install"]
 
 [phases.build]
-cmds = ["bun run tailwind"]
+cmds = ["bun run build"]
 
 [start]
-cmd = "bun run serve"
+cmd = "bun run start"
