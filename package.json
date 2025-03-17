@@ -6,7 +6,7 @@
 		"dev": "concurrently 'bun run tailwind -- --watch' 'bun run serve'",
 		"build:css": "bun run tailwind -- --minify",
 		"build:app": "bun build --minify --splitting --outdir=out src/app.tsx",
-		"build": "bun run build:css && bun run build:app",
+		"build": "bun run build:css && bun run build:app && cp ./static/tailwind.css ./out/static/tailwind.css",
 		"start": "bun run out/app.js",
 		"check": "biome check --write --unsafe --no-errors-on-unmatched --files-ignore-unknown=true",
 		"prepare": "husky"
