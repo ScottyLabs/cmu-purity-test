@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["bun"]
+nixPkgs = ["bun", "gcc", "libstdc++"]
 cmds = ["bun install"]
 
 [phases.build]
