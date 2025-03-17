@@ -6,7 +6,7 @@ import { getCookie, setCookie } from "hono/cookie";
 import type { FC } from "hono/jsx";
 
 const app = new Hono();
-app.use("/static/*", serveStatic({ root: process.cwd() }));
+app.use("/static/*", serveStatic({ root: "./" }));
 
 const Layout: FC = (props) => {
 	return (
