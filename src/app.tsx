@@ -6,7 +6,7 @@ import { getCookie, setCookie } from "hono/cookie";
 import type { FC } from "hono/jsx";
 
 const app = new Hono();
-app.use("/static/*", serveStatic({ root: "./" }));
+app.use("/public/*", serveStatic({ root: "./out/" }));
 
 const Layout: FC = (props) => {
 	return (
@@ -20,7 +20,7 @@ const Layout: FC = (props) => {
 				<title>CMU Purity Test</title>
 
 				<link
-					href="/static/tailwind.css"
+					href="/public/tailwind.css"
 					rel="stylesheet"
 					type="text/css"
 				/>
