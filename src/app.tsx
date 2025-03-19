@@ -38,7 +38,6 @@ interface CheckedItems {
 const setCheckedItems = (c: Context, checkedItems: CheckedItems) => {
 	setCookie(c, "checkedItems", JSON.stringify(checkedItems), {
 		path: "/",
-		maxAge: 60 * 60 * 24, // 24 hours
 		httpOnly: true,
 	});
 };
@@ -49,6 +48,12 @@ const getCheckedItems = (c: Context): CheckedItems => {
 };
 
 app.get("/", (c) => {
+	setCookie(c, "checkedItems", "", {
+		path: "/",
+		httpOnly: true,
+		expires: new Date(0),
+	});
+
 	return c.html(
 		<Layout>
 			<Questions />
